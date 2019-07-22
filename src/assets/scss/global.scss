@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  max-width: 750px;
+  margin: 0 auto;
+  font-family: '微软雅黑','Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 24px;
+}
+h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{
+  margin:0;
+  padding:0;
+  list-style:none;
+  -webkit-appearance: none;
+}
+//全局变量
+$primary: #f9c024;
+$orange: #ff7123;
+
+//全局方法
+
+//transform translate
+@mixin translate($translateX, $translateY) {
+          transform: translate($translateX,$translateY);
+      -ms-transform: translate($translateX,$translateY);
+     -moz-transform: translate($translateX,$translateY);
+  -webkit-transform: translate($translateX,$translateY);
+}
+
+//border-radius
+@mixin border-radius($radius) {
+          border-radius: $radius;
+      -ms-border-radius: $radius;
+     -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+//transform rotate
+@mixin rotate($rotate) {
+          transform: rotate($rotate);
+      -ms-transform: rotate($rotate);
+     -moz-transform: rotate($rotate);
+  -webkit-transform: rotate($rotate);
+}
+
+//transform scale
+@mixin scale($scale) {
+          transform: scale($scale);
+      -ms-transform: scale($scale);
+     -moz-transform: scale($scale);
+  -webkit-transform: scale($scale);
+}
+
+//transition
+%transition{
+  position: relative;
+          transition: all .3s ease-in-out;
+      -ms-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+}
+
+// tooltip san jiao
+%tooltip-before{
+  content: '';
+  position: absolute;
+  z-index: 688;
+  border: 6px solid;
+  border-color: transparent transparent white;
+}
+
+// swiper
+.swiper-pagination-bullet{
+  width: 14px;
+  height: 14px;
+  opacity: 0.8;
+  background: #ffffff;
+  @extend %transition;
+  &.swiper-pagination-bullet-active{
+    width: 30px;
+    background: $primary;
+    border-radius: 10px;
+    opacity: 1;
+  }
+}
+.swiper-slide{
+  > img{
+    width: 100%;
+  }
+}
